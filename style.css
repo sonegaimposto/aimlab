@@ -1,0 +1,17 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.fullscreen-scene {
+    width: 100vw;
+    height: 100vh;
+    padding: 3vw;
+}
+#menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #c6b1b1;
+}
