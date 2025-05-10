@@ -122,6 +122,13 @@ body {
     font-size: 28px;
     letter-spacing: 6px;
 }
+#menu #lastscore {
+    margin-top: 13%;
+    text-align: center;
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: x-large;
+}
 
 
 
@@ -148,4 +155,10 @@ body {
     height: auto;
     aspect-ratio: 1 / 1;
     position: absolute;
+}
+#gamescreen #timer {
+    text-align: center;
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: xx-large;
 }

@@ -1,10 +1,14 @@
 const menuscreen = document.getElementById("menu");
 const gamescreen = document.getElementById("gamescreen");
+const timerText = document.getElementById("timer");
+const lastScore = document.getElementById("lastscore")
 
 const startButton = document.getElementById("start-button");
 const options = document.querySelectorAll(".menu-slider");
 const sounds = document.querySelectorAll(".sound-button");
 var selectedSound = null;
+var totalTargets = 0;
+var targetsHit = 0;
 
 
 options.forEach((element = HTMLInputElement) => {
@@ -55,9 +59,16 @@ startButton.addEventListener("click", event => {
                 menuscreen.style.display = "grid";
                 gamescreen.style.display = "none";
                 clearInterval(game);
+                clearInterval(timerInterval);
+                lastScore.innerText = `Last score: ${targetsHit}/${totalTargets}`
             }, (timer * 1000));
 
             // Jogo
+            timerText.innerText = `${timer}`
+            let timerInterval = setInterval(() => {
+                timer--
+                timerText.innerText = `${timer}`
+            }, 1000);
             let game = setInterval(() => {
                 // Criar target
                 let target = document.createElement("div");
@@ -67,7 +78,8 @@ startButton.addEventListener("click", event => {
                 target.style.top = `${Math.floor( Math.random() * spread + ( (100 - spread)/2 ) )}vh`;
                 target.style.left = `${Math.floor( Math.random() * spread + ( (100 - spread)/2 ) )}vw`;
                 // Colocar na tela
-                gamescreen.appendChild(target)
+                gamescreen.appendChild(target);
+                totalTargets++
                 // Remover
                 setInterval(() => {
                     target.remove()
@@ -77,6 +89,7 @@ startButton.addEventListener("click", event => {
                     if (selectedSound != null) {
                         new Audio(selectedSound).play()
                     }
+                    targetsHit++
                     target.remove();
                 })
                 
