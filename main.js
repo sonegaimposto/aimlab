@@ -58,9 +58,13 @@ startButton.addEventListener("click", event => {
                 // Voltar pro menu
                 menuscreen.style.display = "grid";
                 gamescreen.style.display = "none";
+                // Interromper os loops
                 clearInterval(game);
                 clearInterval(timerInterval);
-                lastScore.innerText = `Last score: ${targetsHit}/${totalTargets}`
+                // Calcular score
+                let score = 0 + ( (totalTargets/100 * targetsHit) * (spread  / 100) * timer / size ); 
+                // Exibir resultados no menu
+                lastScore.innerHTML = `Targets hit: ${targetsHit}/${totalTargets}<br>Score: ${score}`
                 totalTargets = 0;
                 targetsHit = 0;
             }, (timer * 1000));
