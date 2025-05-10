@@ -62,9 +62,9 @@ startButton.addEventListener("click", event => {
                 clearInterval(game);
                 clearInterval(timerInterval);
                 // Calcular score
-                let score = 0 + Math.floor( (totalTargets / targetsHit * 100) * (spread  / 100) * (timer / size) * speed ); 
+                let score = 0 + Math.floor( ((targetsHit / totalTargets) * 10) * ((spread + 50)  / 100) * speed * (timer / (size * 10))); 
                 // Exibir resultados no menu
-                lastScore.innerHTML = `Targets hit: ${targetsHit}/${totalTargets}<br>Score: ${score}`
+                lastScore.innerHTML = `Targets hit: ${targetsHit}/${totalTargets}<br>Percentage: ${Math.floor((targetsHit / totalTargets) * 100)}%<br>Score: ${score}`
                 totalTargets = 0;
                 targetsHit = 0;
             }, (timer * 1000));
@@ -80,7 +80,7 @@ startButton.addEventListener("click", event => {
                 let target = document.createElement("div");
                 target.classList = "target";
                 // Tamanho e posição
-                target.style.width = `${size*0.5}vw`;
+                target.style.width = `${-1 + size*1.5}vh`;
                 target.style.top = `${Math.floor( Math.random() * spread + ( (100 - spread)/2 ) )}vh`;
                 target.style.left = `${Math.floor( Math.random() * spread + ( (100 - spread)/2 ) )}vw`;
                 // Colocar na tela
