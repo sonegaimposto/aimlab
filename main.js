@@ -6,6 +6,7 @@ const lastScore = document.getElementById("lastscore")
 const startButton = document.getElementById("start-button");
 const options = document.querySelectorAll(".menu-slider");
 const sounds = document.querySelectorAll(".sound-button");
+const colors = document.querySelectorAll(".input-customization-option");
 var selectedSound = null;
 var totalTargets = 0;
 var targetsHit = 0;
@@ -35,7 +36,8 @@ startButton.addEventListener("click", event => {
     
     // Fechar menu e abrir tela de jogo
     menuscreen.style.display = "none";
-    gamescreen.style.display = "block"
+    gamescreen.style.display = "block";
+    gamescreen.style.backgroundColor = colors[0].value
     console.log("começou")
 
     // Contagem regressiva
@@ -79,7 +81,8 @@ startButton.addEventListener("click", event => {
                 // Criar target
                 let target = document.createElement("div");
                 target.classList = "target";
-                // Tamanho e posição
+                // Tamanho, posição e cor
+                target.style.backgroundColor = colors[1].value;
                 target.style.width = `${-1 + size*1.5}vh`;
                 target.style.top = `${Math.floor( Math.random() * spread + ( (100 - spread)/2 ) )}vh`;
                 target.style.left = `${Math.floor( Math.random() * spread + ( (100 - spread)/2 ) )}vw`;

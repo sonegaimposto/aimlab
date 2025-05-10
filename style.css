@@ -109,6 +109,34 @@ body {
     transform: translate(-50%,-50%);
 }
 
+#menu #customization {
+    position: relative;
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+#menu #customization .customization-option {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    border: 1px solid white;
+    border-radius: 10px;
+    margin: 15%;
+}
+#menu #customization .customization-option h3 {
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 100;
+    letter-spacing: 3px;
+}
+#menu #customization .customization-option .input-customization-option {
+    width: 20%;
+    height: fit-content;
+    aspect-ratio: 1 / 1;
+    background-color: #3b3b3d;
+    border: 1px solid white;
+    border-radius: 100%;
+}
 #menu #start-button {
     display: flex;
     justify-content: center;
@@ -151,7 +179,6 @@ body {
 }
 #gamescreen .target {
     border-radius: 100%;
-    background-color: red;
     height: auto;
     aspect-ratio: 1 / 1;
     position: absolute;
