@@ -62,7 +62,7 @@ startButton.addEventListener("click", event => {
                 clearInterval(game);
                 clearInterval(timerInterval);
                 // Calcular score
-                let score = 0 + ( (totalTargets/100 * targetsHit) * (spread  / 100) * timer / size ); 
+                let score = 0 + Math.floor( (totalTargets / targetsHit * 100) * (spread  / 100) * (timer / size) * speed ); 
                 // Exibir resultados no menu
                 lastScore.innerHTML = `Targets hit: ${targetsHit}/${totalTargets}<br>Score: ${score}`
                 totalTargets = 0;
@@ -80,7 +80,7 @@ startButton.addEventListener("click", event => {
                 let target = document.createElement("div");
                 target.classList = "target";
                 // Tamanho e posição
-                target.style.width = `${size}vw`;
+                target.style.width = `${size*0.5}vw`;
                 target.style.top = `${Math.floor( Math.random() * spread + ( (100 - spread)/2 ) )}vh`;
                 target.style.left = `${Math.floor( Math.random() * spread + ( (100 - spread)/2 ) )}vw`;
                 // Colocar na tela
