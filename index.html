@@ -6,24 +6,56 @@
     <title>AIMLAB</title>
     <link rel="shortcut icon" href="assets/icon.png" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
+    <script src="main.js" defer></script>
 </head>
 
 <body>
 
     <div id="menu" class="fullscreen-scene">
-        <div class="menu-option-div">
-            <h2>Speed</h2>
-            <input type="range" class="menu-slider" id="menu-speed-slider">
+        <span></span>
+        <div id="options">
+            <div class="menu-option-div">
+                <h2>Speed</h2>
+                <input type="range" class="menu-slider" id="menu-speed-slider" min="1" max="15">
+                <p>8</p>
+            </div>
+            <div class="menu-option-div">
+                <h2>Size</h2>
+                <input type="range" class="menu-slider" id="menu-size-slider" min="1" max="5">
+                <p>3</p>
+            </div>
+            <div class="menu-option-div">
+                <h2>Spread</h2>
+                <input type="range" class="menu-slider" id="menu-spread-slider" min="1" max="100" value="80">
+                <p>80</p>
+            </div>
+            <div class="menu-option-div">
+                <h2>Timer</h2>
+                <input type="range" class="menu-slider" id="menu-timer-slider" min="10" max="30" value="15" step="5">
+                <p>15</p>
+            </div>
         </div>
-        <div class="menu-option-div">
-            <h2>Size</h2>
-            <input type="range" class="menu-slider" id="menu-size-slider">
+        <span></span>
+        <div id="other">
+            <h2>Tap Sound</h2>
+            <div id="sound-list">
+                <div class="sound-button"><img src="assets/sound-icon.png"></div>
+                <div class="sound-button"><img src="assets/sound-icon.png"></div>
+                <div class="sound-button"><img src="assets/sound-icon.png"></div>
+                <div class="sound-button"><img src="assets/sound-icon.png"></div>
+            </div>
+            
         </div>
-        <button id="start-button" onclick="start()">START</button>
+        <span></span>
+        <span></span>
+        <span></span>
+        <button id="start-button">
+            START
+        </button>
     </div>
 
     <div id="gamescreen" class="fullscreen-scene">
-
+        
     </div>
 
 </body>
