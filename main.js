@@ -61,6 +61,8 @@ startButton.addEventListener("click", event => {
                 clearInterval(game);
                 clearInterval(timerInterval);
                 lastScore.innerText = `Last score: ${targetsHit}/${totalTargets}`
+                totalTargets = 0;
+                targetsHit = 0;
             }, (timer * 1000));
 
             // Jogo
