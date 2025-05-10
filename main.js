@@ -54,10 +54,11 @@ startButton.addEventListener("click", event => {
                 // Voltar pro menu
                 menuscreen.style.display = "grid";
                 gamescreen.style.display = "none";
+                clearInterval(game);
             }, (timer * 1000));
 
             // Jogo
-            setInterval(() => {
+            let game = setInterval(() => {
                 // Criar target
                 let target = document.createElement("div");
                 target.classList = "target";
